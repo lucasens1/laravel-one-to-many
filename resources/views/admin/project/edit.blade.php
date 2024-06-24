@@ -32,6 +32,7 @@
                 <select name="type_id" id="type">
                     @foreach ($typeList as $item)
                         {{-- $item è istanza di Type --}}
+                        {{-- Seleziono il vecchio ID (da typeList) e lo metto insieme al $project->type_id ed è selezionato solo se è uguale all'item id --}}
                         <option @selected(old('id', $project->type_id) === $item->id) value="{{ $item->id }}"> {{ $item->name }} </option>
                     @endforeach
                 </select>
