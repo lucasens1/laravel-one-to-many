@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -15,8 +16,9 @@ class ProjectController extends Controller
     public function index()
     {
         $projectsList = Project::all();
+        $typeList = Type::all();
 
-        return view('admin.project.index', compact('projectsList'));
+        return view('admin.project.index', compact('projectsList', 'typeList'));
     }
 
     /**
@@ -24,8 +26,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
+        $typeList = Type::all();
         // Restituisco la view per aggiungere dati
-        return view('admin.project.create');
+        return view('admin.project.create', compact('typeList'));
     }
 
     /**
@@ -36,7 +39,9 @@ class ProjectController extends Controller
         // Salvo i dati
         $data = $request->all();
         $newProject = new Project();
-        $newProject->title = $data['title']; 
+        $newProject->title = $data['title'];
+        /* Inserisco il nuovo campo preso dalla tabella */
+        $newProject->type_id = $data['type_id'];
         $newProject->description = $data['description'];
         // Generiamo lo slug
         $newProject->slug = Str::slug($newProject->title);
@@ -69,6 +74,7 @@ class ProjectController extends Controller
        /*  $data = $request->all(); */
        $data = $request->all();
        $project->title = $data['title'];
+       $project->type_id = $data['type_id'];
        $project->description = $data['description'];
        $project->slug = Str::slug($project->title);
        $project->save();

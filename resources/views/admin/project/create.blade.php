@@ -20,7 +20,19 @@
 
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo progetto :</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ old('title')}}">
+                <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="type" class="form-label">Tipo progetto :</label>
+                <label for="type"> Seleziona tipo progetto </label>
+                {{-- Nel name passiamo il nome della colonna --}}
+                <select name="type_id" id="type">
+                    @foreach ($typeList as $item)
+                        {{-- $item è istanza di Type --}}
+                        <option value="{{ $item->id }}"> {{ $item->name }} </option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="mb-3">

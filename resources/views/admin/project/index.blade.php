@@ -14,6 +14,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Titolo</th>
+                    <th scope="col">Tipo</th>
                     <th scope="col">Descrizione</th>
                     <th scope="col">Azioni</th>
                 </tr>
@@ -23,6 +24,7 @@
                     <tr>
                         <th scope="row"> {{ $project->id }}</td>
                         <td> {{ $project->title }} </td>
+                        <td> {{ $project->type?->name }}</td>
                         <td> {{ $project->description }} </td>
                         <td class="d-flex gap-2">
                             <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}"
