@@ -6,6 +6,8 @@
     <div class="d-flex align-items-start">
         <div class="mx-2">
             <h6>{{ $project->description}}</h6>
+            {{-- Aggiungo l'attributo tipo che viene visualizzato se presente --}}
+            <h6>{{ $project->type?->name}}</h6>
         </div>
     </div>
 </div>
