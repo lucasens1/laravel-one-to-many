@@ -26,6 +26,18 @@
             </div>
 
             <div class="mb-3">
+                <label for="type" class="form-label">Tipo progetto :</label>
+                <label for="type"> Seleziona tipo progetto </label>
+                {{-- Nel name passiamo il nome della colonna --}}
+                <select name="type_id" id="type">
+                    @foreach ($typeList as $item)
+                        {{-- $item è istanza di Type --}}
+                        <option @selected(old('id', $project->type_id) === $item->id) value="{{ $item->id }}"> {{ $item->name }} </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
                 <textarea class="form-control" id="description" name="description" rows="3">{{ old('description', $project->description) }}</textarea>
             </div>
