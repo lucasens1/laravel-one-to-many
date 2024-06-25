@@ -26,7 +26,7 @@
                         {{-- Qui va collegata la view dell'index con la tabella dei Progetti --}}
                         <a href="{{ route('admin.projects.index')}}" class="btn btn-secondary fs-4 mt-4" role="button">Visiona la lista dei Progetti</a>
                         {{-- Qui va collegata la view del create --}}
-                        <a href="{{ route('admin.projects.create')}}" class="btn btn-secondary fs-4 mt-4" role="button">Aggiungi un Progetto</a>
+                        <a href="{{ route('admin.projects.create')}}" class="btn btn-secondary fs-4 mt-4" role="button">Crea un nuovo Progetto</a>
                     </div>
                 </div>
 

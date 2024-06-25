@@ -28,7 +28,7 @@
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
       <div class="row justify-content-between">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">BoolPress</a>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">Project Admin Dashboard</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
           aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
       </div>
       <div class="navbar-nav">
         <div class="nav-item text-nowrap ms-2">
-          <a class="nav-link" href="{{ route('logout') }}"
+          <a class="nav-link mx-2" href="{{ route('logout') }}"
             onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
             {{ __('Logout') }}
@@ -60,14 +60,21 @@
               <li class="nav-item">
                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-secondary' : '' }}"
                   href="{{ route('admin.dashboard') }}">
-                  <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
+                  <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard di benvenuto
                 </a>
               </li>
               <li class="nav-item">
                 {{-- Route::currentRouteName() è un metodo della classe route che permette di restituire il nome attuale --}}
                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.project.index' ? 'bg-secondary' : '' }}"
                   href="{{ route('admin.projects.index') }}">
-                  <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Index
+                  <i class="fa-solid fa-list"></i> Tabella Progetti
+                </a>
+              </li>
+              <li class="nav-item">
+                {{-- Route::currentRouteName() è un metodo della classe route che permette di restituire il nome attuale --}}
+                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.types.index' ? 'bg-secondary' : '' }}"
+                  href="{{ route('admin.types.index') }}">
+                  <i class="fa-solid fa-list"></i> Tabella Tipi
                 </a>
               </li>
             </ul>

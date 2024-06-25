@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container p-2">
-        <h1>Modifica il fumetto : </h1>
+        <h1>Modifica il Progetto : </h1>
 
         @if ($errors->any())
             <div class="alert alert-danger">
